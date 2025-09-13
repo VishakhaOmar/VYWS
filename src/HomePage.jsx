@@ -1,35 +1,59 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
+import { motion, useMotionValue, useTransform, animate,AnimatePresence } from "framer-motion";
 
 export default function HomePage() {
+
+    const count = useMotionValue(0);
+    const rounded = useTransform(count, Math.round);
   
-  return (
+    useEffect(() => {
+      const animation = animate(count, 60, {
+        duration: 4
+      });
+    }, []);
+  
+    const items = [  {
+      id: 1,
+      content: "Commitment to Education"
+    },
+    {
+      id: 2,
+      content: "Pursuit of Excellence"
+    },
+    {
+      id: 3,
+      content: "Empowerment through Knowledge"
+    }
+  ];
+  
+    const [index, setIndex] = useState(0);
+  
+    useEffect(() => {
+      const id = setInterval(() => {
+        setIndex((state) => {
+          if (state >= items.length - 1) return 0;
+          return state + 1;
+        });
+      }, 2000);
+      return () => clearInterval(id);
+    }, []);
+  
+  return(
     <div className="homepage">
-
-      
-       <header className="navbar">
-        <nav>
-          <img className="logo" src="../public/vyws-logo.png" alt="VYWS Logo" />
-          <h1>VYWS</h1>
-        </nav>
-        <div className="container">
-            <a href="#about">About</a>
-            <a href="#institutes">Institutes</a>
-            <a href="#contact">Contact</a>
-        </div>
-      </header>
-
-      
-      <section className="hero">
+    <section className="hero">
         <div className="overlay">
-          <h1 className="title">Vidarbha Youth Welfare Society</h1>
-          <p className="subtitle">
-            Established 1965 • Shaping Education Across Vidarbha
-          </p>
-          <div className="buttons">
-            <a href="#institutes" className="btn primary">Explore Institutes</a>
-            <a href="#contact" className="btn secondary">Contact Us</a>
-          </div>
+          <span className="hero-text">
+         Carrying forward VYWS’s <motion.span className="count">{rounded}</motion.span><p className="count">+ </p>years legacy of <br /><motion.span className="count"
+          key={items[index].id}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ ease: "easeInOut" }}
+        >
+          {items[index].content}
+        </motion.span>.
+        </span>
         </div>
       </section>
 
@@ -50,6 +74,7 @@ export default function HomePage() {
       <section className="institutes">
         <div className="container">
           <h2>Our Institutes</h2>
+          <img className="border" src="/src/assets/border.svg" alt="Border" />
           <h3>Carrying forward VYWS’s 60-year legacy of commitment to education.</h3>
           <div className="grid">
             <div className="card">
@@ -71,28 +96,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section className="contact" id="contact">
-        <div className="container">
-          <h2>Contact Us</h2>
-          <p>
-            Chaitanya Building, In front of Telephone Office, Camp Road, Amravati – 444602
-          </p>
-          <p>Email: secretary_vyws@rediffmail.com | Phone: 0721-2662618</p>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <div className="container footer-content">
-          <p>© {new Date().getFullYear()} Vidarbha Youth Welfare Society</p>
-          <nav>
-            <a href="#about">About</a>
-            <a href="#institutes">Institutes</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </footer>
-
-    </div>
-  );
+</div>
+  )
 }

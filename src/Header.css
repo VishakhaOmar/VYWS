@@ -1,0 +1,114 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Top green strip */
+header{
+  max-width: 100%;
+}
+
+.top-strip {
+  background-color: #064e3b;
+  height: 18px;
+  border-radius: 50px;
+  
+}
+
+/* Main Header */
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0px 25px;
+  background: #fff;
+}
+
+/* Left Section */
+.vywslogo{
+  height: 150px;
+  width: 150px;
+}
+
+.header-text{
+  text-align: center;
+}
+
+.header-text .line {
+  color: #00695c;
+  font-size: 18px;
+  font-weight:bold;
+  margin-top:1;
+  margin-bottom: 5px;
+}
+
+.header-text .title {
+  font-size: 36px;
+  font-weight:800;
+  color: #000;
+  letter-spacing: wide;
+  margin: 0;
+}
+
+.header-text .founder {
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 4px;
+}
+
+.header-text .location {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom:1 ;
+  margin-top: 4px;
+}
+
+.founder-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #064e3b;
+  padding: 0 25px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content:space-evenly;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  color: #ffeb3b;
+}
+
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #213547;
+  color: #fff;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
