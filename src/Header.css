@@ -1,99 +1,78 @@
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth;
-}
-
-/* Top green strip */
-header{
-  max-width: 100%;
-}
-
 .top-strip {
-  background-color: #064e3b;
+  background-color: #27445D;
   height: 18px;
   border-radius: 50px;
-  
+  width: 100%;
 }
 
 /* Main Header */
 .header-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding:0px 25px;
-  background: #fff;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  padding: 10px 15px;
+  background: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Left Section */
-.vywslogo{
-  height: 150px;
+/* Left & Right Images */
+.image {
+  height: auto;
   width: 150px;
+  max-width: 100%;
+  border-radius: 50%;
 }
 
-.header-text{
+/* Center Text */
+.header-text {
   text-align: center;
-}
-
-.header-text .line {
-  color: #00695c;
-  font-size: 18px;
-  font-weight:bold;
-  margin-top:1;
-  margin-bottom: 5px;
+  flex: 1;
+  min-width: 250px;
+  margin: 10px 0;
 }
 
 .header-text .title {
-  font-size: 36px;
-  font-weight:800;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #000;
-  letter-spacing: wide;
   margin: 0;
 }
 
-.header-text .founder {
-  font-size: 18px;
-  font-weight: lighter;
-  margin: 4px;
+.header-text .tagline,
+.header-text .founder,
+.header-text .location {
+  font-size: 1rem;
+  margin: 4px 0;
 }
 
 .header-text .location {
   color: #d32f2f;
   font-weight: bold;
-  font-size: 18px;
-  margin-bottom:1 ;
-  margin-top: 4px;
-}
-
-.founder-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  object-fit: cover;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #064e3b;
-  padding: 0 25px;
+  background-color: #213547;
+  padding: 0 15px;
 }
 
 .navbar ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  justify-content:space-evenly;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 .navbar ul li {
   color: white;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 12px 0;
+  padding: 12px 15px;
   cursor: pointer;
 }
 
@@ -101,14 +80,59 @@ header{
   color: #ffeb3b;
 }
 
-.contact {
-  padding: 3rem 2rem;
-  text-align: center;
-  background: #213547;
-  color: #fff;
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
 }
 
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+
+/* ----------------- Responsive ----------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .header-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text .title {
+    font-size: 1.8rem;
+  }
+
+  .header-text .tagline,
+  .header-text .founder,
+  .header-text .location {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .image {
+    width: 100px;
+  }
+
+  .header-text .title {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
 }

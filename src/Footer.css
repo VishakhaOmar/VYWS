@@ -1,0 +1,136 @@
+.footer {
+  background-color: #444;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+}
+
+/* Left Section */
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Quick Links */
+.footer-links {
+  flex: 1 1 200px;
+}
+
+.footer-links h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+/* Contact */
+.footer-contact {
+  display: flex;
+  flex-direction: column;   
+  gap: 1rem ;
+}
+
+.footer-contact h3 {
+  width: fit-content;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid #777;
+  margin-top: 20px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #ccc;
+  gap: 10px;
+}
+
+.footer-bottom .highlight {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.footer-policies a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 992px) {
+  .footer-container {
+    justify-content: center;
+  }
+  .footer-left,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 45%;
+  }
+}
+
+/* Mobile: stacked */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
