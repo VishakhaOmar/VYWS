@@ -39,7 +39,6 @@ export default function HomePage() {
       return () => clearInterval(id);
     }, []);
 
-  
   return(
     <div className="homepage">
     <section className="hero">
@@ -71,7 +70,7 @@ export default function HomePage() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="about-heading">About Us</h2>
+          <span className="about-heading">About Us     </span>
        Vidarbha Youth Welfare Society was founded by the great visionaries of this region Late. Prof Ram K. Meghe, Late. Surendra B. Deshmukh, Late. Prof. Baburao D. Hiwase, Late. Prof. Dinkarrao K. Deshmukh, Late. Pundlikrao B. Gohad, Late. Vasantrao N. Chaudhary, Late. Dr. Murlidhar R. Deshmukh, Shri. Shashikumar R. Deshmukh, Shri. Ramdas Alias Nanasaheb P. Dhande & Shri. Shankarrao D. Kale in the year 1965, with a clear vision of making it a world class premier organization for primary, secondary, higher, technical, and professional education.
         </motion.div>
 

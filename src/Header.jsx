@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { motion, useMotionValue, useTransform, animate,AnimatePresence } from "framer-motion";
+import { Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function Header() {
+
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
 
@@ -38,8 +43,41 @@ export default function Header() {
       {/* Navigation Bar */}
       <nav className="navbar">
         <ul>
-          <li>Home</li>
-          <li>About ▼</li>
+          <li> <Link to="/">
+                    Home 
+                  </Link></li>
+          <li onClick={() => setShowPopup(true)}>
+            About ▼ 
+            {showPopup && (
+              <div className="popup-content">
+                <div className="row">
+                  <Link to="/history" onClick={(e) => {
+                    e.stopPropagation();
+                    setShowPopup(false);
+                  }}>
+                    Our History
+                  </Link>
+                </div>
+                <div className="row">
+                  <Link to="/objectives" onClick={(e) => {
+                    e.stopPropagation();
+                    setShowPopup(false);
+                  }}>
+                    Aims and objectives
+                  </Link>
+                  </div>
+                <button
+                  className="close-btn"
+                  onClick={(e) => {
+                    e.stopPropagation(); 
+                    setShowPopup(false);
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+            )}
+          </li>
           <li>Founder</li>
           <li>E-Learning Portal</li>
           <li>Academics</li>
