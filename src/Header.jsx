@@ -12,10 +12,9 @@ export default function Header() {
   return (
 
     <header>
-      <div className="top-strip"></div>
-
+        <div className="header">
       <div className="header-main">
-    
+
         <div className="header-left">
           <img
             src="/src/assets/logo-vyws.png" 
@@ -36,6 +35,7 @@ export default function Header() {
             alt="Founder"
             className="image"
           />
+        </div>
         </div>
         </div>
  

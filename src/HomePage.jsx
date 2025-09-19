@@ -39,6 +39,18 @@ export default function HomePage() {
       return () => clearInterval(id);
     }, []);
 
+    const circulars = [
+  "परिपत्रक क्र.5 (लेखा व वित्त विभाग)",
+  "परिपत्रक क्र.01 (अकाउंट विभाग)",
+  "परिपत्रक क्र.9 (आरोग्य विभाग)",
+];
+
+const notices = [
+  "केवळ हंगामी / अस्थायी तात्पुरत्या स्वरुपाच्या शिक्षक नियुक्तीसाठी",
+  "रायगड विभाग, कामोठे शैक्षणिक वर्ष २०२५-२६",
+  "मुलाखतीच्या सूचना",
+];
+
   return(
     <div className="homepage">
     <section className="hero">
@@ -57,8 +69,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <div className="top-strip"></div> */}
-
       
       <section className="about-section">
         <div className="containerabout">
@@ -74,7 +84,6 @@ export default function HomePage() {
        Vidarbha Youth Welfare Society was founded by the great visionaries of this region Late. Prof Ram K. Meghe, Late. Surendra B. Deshmukh, Late. Prof. Baburao D. Hiwase, Late. Prof. Dinkarrao K. Deshmukh, Late. Pundlikrao B. Gohad, Late. Vasantrao N. Chaudhary, Late. Dr. Murlidhar R. Deshmukh, Shri. Shashikumar R. Deshmukh, Shri. Ramdas Alias Nanasaheb P. Dhande & Shri. Shankarrao D. Kale in the year 1965, with a clear vision of making it a world class premier organization for primary, secondary, higher, technical, and professional education.
         </motion.div>
 
-        {/* Right Div */}
         <motion.img
           className="box right-box"
           initial={{ x: 20, opacity: 0 }}
@@ -121,38 +130,46 @@ export default function HomePage() {
       </div>
       </section>
 
-      <section className="institutes">
+      <section className="Management">
         <div className="container">
-          <h2>Management of <br /> Vidarbha Youth Welfare Society</h2>
+          <h2>Management of VYWS</h2>
           <div className="grid">
+            <div className="cardcontent"> 
             <div className="card">
               <img className="image" src="/src/assets/president.jpeg"/>
-              <div>
-              <p><b>Dr. Nitin R. Dhande</b></p>
-              <p>President</p>
+              <div className="name">
+              <p className="post"><b>President</b></p>
+              <p>Dr. Nitin R. Dhande</p>
             </div>
             </div>
+            </div>
+            <div className="cardcontent">
             <div className="card">               
               <img className="image" src="/src/assets/vice-president.jpeg"/>
-              <div>
-              <p><b>Dr. Anjali S. Patil</b></p>
-              <p>Vice President</p>
+              <div className="name">
+              <p className="post"><b>Vice President</b></p>
+              <p>Dr. Anjali S. Patil</p>
               </div>
             </div>
+            </div>
+            <div className="cardcontent">
             <div className="card">               
               <img className="image" src="/src/assets/treasurer.jpeg"/>
-              <div>
-              <p><b>Dr. Priya S. Patil</b></p>
+              <div className="name">
+              <p className="post"><b>Dr. Priya S. Patil</b></p>
               <p>Treasurer</p>
             </div>
             </div>
-            <div className="card">             
+            </div>
+              <div className="cardcontent">
+                <div className="card">
                  <img className="image" src="/src/assets/secretary.png"/>
-                 <div>
-              <p><b>Dr. Snehal S. Patil</b></p>
+                 <div className="name">
+              <p className="post"><b>Dr. Snehal S. Patil</b></p>
               <p>Secretary</p>
             </div>
             </div>
+            </div>             
           </div>
           <div className="button">
           <button>View More</button>
@@ -160,48 +177,160 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="methodology-cards">
+      <section className="news">
       <div className="container">
-      <h2 className="methodology-heading">Our Educational Methodology</h2>
-        <div className="card-container">
-      <div className="card card1">
-        <h3>Educational Excellence</h3>
-        <p>
-          We uphold rigorous academic standards, employ highly qualified educators,
-          and continuously innovate to ensure every student receives world-class education.
-        </p>
-        <span className="icon1"></span>
-      </div>
+        <h2 className="news-title">News</h2>
+      <div className="news-wrapper">
+        {/* Circulars */}
+        <div className="news-card">
+          <div className="card-header">
+            <h3>Circulars</h3>
+            <button className="view-btn">VIEW ALL</button>
+          </div>
 
-      <div className="card card2">
-        <h3>Student-Centered Learning</h3>
-        <p>
-          Our approach places students at the heart of the educational process,
-          fostering critical thinking, creativity, and independent learning skills.
-        </p>
-        <span className="icon"></span>
-      </div>
+          <div className="scroll-box">
+            <motion.div
+              className="scroll-content"
+              animate={{ y: ["100%", "-100%"] }}
+              transition={{ repeat: Infinity, duration: 7, ease: "linear" }}
+            >
+              {circulars.concat(circulars).map((item, i) => (
+                <div key={i} className="news-item">
+                  <span>{item}</span>
+                  <span className="pdf-icon">📄</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
 
-      <div className="card card1">
-        <h3>Global Perspective</h3>
-        <p>
-          We prepare students for success in an interconnected world by incorporating
-          cultural awareness and global citizenship into our curriculum.
-        </p>
-        <span className="icon1"></span>
-      </div>
+        {/* Notices */}
+        <div className="news-card">
+          <div className="card-header">
+            <h3>Notices</h3>
+            <button className="view-btn">VIEW ALL</button>
+          </div>
 
-      <div className="card card2">
-        <h3>Future-Ready Skills</h3>
-        <p>
-          Beyond academics, we focus on skills for the future workplace – digital literacy,
-          problem-solving, and adaptability.
-        </p>
-        <span className="icon"></span>
-      </div>
+          <div className="scroll-box">
+            <motion.div
+              className="scroll-content"
+              animate={{ y: ["100%", "-100%"] }}
+              transition={{ repeat: Infinity, duration: 7, ease: "linear" }}
+            >
+              {notices.concat(notices).map((item, i) => (
+                <div key={i} className="news-item">
+                  <span>{item}</span>
+                  <span className="pdf-icon">📄</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
       </div>
     </section>
+
+    <div className="dashboard">
+      <div className="dashboardcontainer">
+       <h2 className="upper">VYWS's Dashboard</h2>       
+          <div className="middle">
+          <div className="col col1">
+                <li>Engineering colleges</li>
+                <li>Mangement colleges</li>
+                <li>Polytechnic Diploma</li>
+                <li>Dental colleges</li>
+          </div>
+          <div className="col col2">
+              <div className="maindiv">
+                <div className="colgcontent">
+                  <h3>Founder</h3>
+                  Late Prof. Ram K. Meghe
+                  <h3>Work area:</h3>
+                educational institutions across Amravati and Wardha regions
+                </div>
+                </div>
+          </div>
+          <div className="col col3">
+              <li>Pharmacy Colleges</li>
+              <li>Arts Colleges</li>
+              <li>Commerce Colleges</li>
+              <li>Social work Colleges</li>
+          </div>
+          </div>
+          <div className="lower">
+              Schools under VYWS are affiliated with State Board, CBSE, and other recognized boards.
+          </div>
+        </div>
+    </div>
+
+    <div className="last">
+      <div className="last-container">
+        <h2>Institution's area of work</h2>
+        <div className="grid2">
+          <div className="cards" data-title="Amravati">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Badnera">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Wardha">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Borgaon">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Chandur">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Dhamak">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Pipri">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Chincholi">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Virul">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Nandgaon">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title=" Gawandgaon">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Bahilopar">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Kharanja">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Rajura">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+          <div className="cards" data-title="Madani">
+            <img src="/src/assets/badnera.png" alt="" />
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
 </div>
   )
 }
