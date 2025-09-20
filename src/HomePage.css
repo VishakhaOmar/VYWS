@@ -219,21 +219,31 @@ body, html {
   overflow-x:scroll;
 }
 
-.Management .container .card {
-  /* flex-direction: column; */
+.Management .container .cardmain {
   display: flex;
   gap:1rem;
+  text-align:center;
   align-items: start;
   justify-content: space-evenly;
 }
 
+
+
 .Management .name .post{
-  font-size: x-large;
   color: #213547;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
+.Management .name{
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+  white-space: normal;
+}
 
-.Management .card .image{
+.Management .cardmain .image{
   height: 100px;
   width: 70px;
   margin-bottom: 1rem;
@@ -504,8 +514,6 @@ body, html {
   height: 100%;
   z-index: 1;
 }
-
-
 
 .grid2 .cards::before{
   content:attr(data-title);

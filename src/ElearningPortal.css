@@ -1,0 +1,67 @@
+.elearning{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-container {
+  max-width: 80%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.portal-title {
+  width: fit-content;
+  color: #213547;
+  font-size: 2.5rem;
+  text-align: start;
+  border-bottom: #213547 2px solid ;
+}
+
+.portal-text {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px;
+  position: relative;
+}
+
+.portal-table::before{
+  content: "";
+  position: absolute;
+  top: 20%;
+  left:30%;
+  width: 40%;
+  height: 70%;
+  background: url('../public/vyws-logo.png') no-repeat center center;
+  background-size:contain;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1; 
+}
+
+.portal-table th,
+.portal-table td {
+  border: 1px solid #213547;
+  padding: 10px;
+  text-align: left;
+}
+
+.portal-table th {
+  background-color: #f9f9f9;
+}
+
+.portal-link {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.portal-link:hover {
+  text-decoration: underline;
+}

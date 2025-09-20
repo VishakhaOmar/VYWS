@@ -135,7 +135,7 @@ const notices = [
           <h2>Management of VYWS</h2>
           <div className="grid">
             <div className="cardcontent"> 
-            <div className="card">
+            <div className="cardmain">
               <img className="image" src="/src/assets/president.jpeg"/>
               <div className="name">
               <p className="post"><b>President</b></p>
@@ -144,29 +144,29 @@ const notices = [
             </div>
             </div>
             <div className="cardcontent">
-            <div className="card">               
+            <div className="cardmain">               
               <img className="image" src="/src/assets/vice-president.jpeg"/>
               <div className="name">
               <p className="post"><b>Vice President</b></p>
-              <p>Dr. Anjali S. Patil</p>
+              <p>Adv. Uday S. Deshmukh</p>
               </div>
             </div>
             </div>
             <div className="cardcontent">
-            <div className="card">               
+            <div className="cardmain">               
               <img className="image" src="/src/assets/treasurer.jpeg"/>
               <div className="name">
-              <p className="post"><b>Dr. Priya S. Patil</b></p>
-              <p>Treasurer</p>
+              <p className="post"><b>Treasurer</b></p>
+              <p>Prof. (Dr.) Hemant M. Deshmukh</p>
             </div>
             </div>
             </div>
               <div className="cardcontent">
-                <div className="card">
+                <div className="cardmain">
                  <img className="image" src="/src/assets/secretary.png"/>
                  <div className="name">
-              <p className="post"><b>Dr. Snehal S. Patil</b></p>
-              <p>Secretary</p>
+              <p className="post"><b>Secretary</b></p>
+              <p>Shri. Yuvrajsingh V. Choudhary</p>
             </div>
             </div>
             </div>             
@@ -181,7 +181,7 @@ const notices = [
       <div className="container">
         <h2 className="news-title">News</h2>
       <div className="news-wrapper">
-        {/* Circulars */}
+
         <div className="news-card">
           <div className="card-header">
             <h3>Circulars</h3>
@@ -204,7 +204,6 @@ const notices = [
           </div>
         </div>
 
-        {/* Notices */}
         <div className="news-card">
           <div className="card-header">
             <h3>Notices</h3>

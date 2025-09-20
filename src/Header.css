@@ -30,6 +30,10 @@
 .header-text {
   text-align: center;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-width: fit-content;
   margin: 10px 0;
 }
@@ -141,9 +145,6 @@
 }
 
 
-/* ----------------- Responsive ----------------- */
-
-/* Tablets */
 @media (max-width: 992px) {
   .header-main {
     flex-direction: column;
@@ -161,7 +162,7 @@
   }
 }
 
-/* Mobile */
+
 @media (max-width: 600px) {
   .image {
     width: 100px;

@@ -78,11 +78,18 @@ export default function Header() {
               </div>
             )}
           </li>
-          <li>Founder</li>
-          <li>E-Learning Portal</li>
-          <li>Academics</li>
-          <li>Ececutive Committee</li>
-          <li>Institutes</li>
+          <li><Link to="/founders">
+                    Founders
+                  </Link></li>
+          <li><Link to="/elearning">
+                    E-Learning Portal
+                  </Link></li>
+          <li><Link to="/executives">
+                    Executive commitie
+                  </Link></li>
+          <li><Link to="/institutes">
+                    Institutes
+                  </Link></li>
           <li>Contacts</li>
         </ul>
       </nav>

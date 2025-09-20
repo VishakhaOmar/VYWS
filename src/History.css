@@ -10,7 +10,6 @@ section{
   height: 150%;
   max-width: 80%;
   font-family: Arial, sans-serif;
-  padding: 40px;
   line-height: 1.6;
   position: relative;
   text-align: justify;
@@ -34,7 +33,7 @@ section{
 .History-page h1{
   font-size: 2.5rem;
   color: #213547;
-  margin-block: 4rem;
+  margin-block: 2rem;
   font-weight: bold;
   padding-block: 0.5rem;
   border-bottom: #213547 2px solid;

@@ -1,0 +1,58 @@
+.institutes_name{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.title {
+  width: fit-content;
+  color: #213547;
+  font-size: 2.5rem;
+  text-align: start;
+  border-bottom: #213547 2px solid ;
+}
+
+.college-school{
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.college-school th,
+.college-school td {
+  border: 1px solid #213547;
+  padding: 10px;
+  text-align: left;
+}
+
+.college-school th {
+  background-color: #f9f9f9;
+}
+
+.school::before, .clg::before{
+  content: "";
+  position: absolute;
+  top: 20%;
+  left:30%;
+  width: 400px;
+  height: 400px;
+  background: url('../public/vyws-logo.png') no-repeat center center;
+  background-size:contain;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1; 
+}
